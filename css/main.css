@@ -1,0 +1,258 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+    user-select: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  background: darkblue url(../src/background.jpg) no-repeat top / cover;
+  line-height: 1;
+  width: 100vw;
+  height: 100vh;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+button {
+  appearance: none;
+  background-color: rgba(0,0,0,0);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2vw;
+  color: rgb(255, 196, 0);
+  border: 0.2vw solid rgb(255, 196, 0);
+}
+button:disabled {
+  background-color: rgba(0,0,0,0);
+  color: rgba(255, 196, 0, 0.5);
+  border: 0.2vw solid rgba(255, 196, 0, 0.5);
+}
+button:hover {
+  background: rgb(255, 196, 0);
+  box-shadow: 0 0 10px rgb(255, 196, 0);
+  color: white;
+  cursor: pointer;
+}
+button:disabled:hover {
+  background-color: rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgb(255, 196, 0);
+  color: rgba(255, 196, 0, 0.5);
+  cursor: default;
+}
+
+.header {
+  background: rgba(0,0,0,.3);  
+  text-align: center;
+  width: 30vw;
+  margin: 0 auto;
+  padding: 1vw;
+}
+
+.header-top {
+  font-family: chinaCyr;
+  font-size: 4vw;
+  font-weight: bold;
+  color: white;
+}
+
+.header-bottom {
+  font-size: 2vw;
+  font-weight: bold;
+  color: rgb(255, 196, 0);
+}
+
+.content {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.battlefield {
+  position: relative;
+  margin-right: 12vw;
+}
+
+.battlefield-table {
+  color: white;
+  font-size: 1.2vw;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: rgba(40, 46, 250, 0.25);
+}
+
+.battlefield-item {
+  position: relative;
+  width: 2vw;
+  height: 2vw;
+  border: 0.2vw solid rgba(250, 198, 28, 0.8);
+}
+
+.battlefield-item-under {
+  background: rgba(250, 198, 28, 0.5);
+}
+
+.battlefield-status {
+  font-size: 5vw;
+  color: white;
+}
+
+.marker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.marker-row {
+  left: -2.15vw;
+}
+
+.marker-column {
+  top: -2.15vw;
+}
+
+.ship {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: -0.08vw;
+  border: 0.2vw solid #ff0800;
+  background: rgba(255, 0, 0, 0.15);
+  width: 2vw;
+  height: 2vw;
+}
+
+.ship-row-1 {
+  width: 2vw;
+}
+
+.ship-row-2 {
+  width: 4.12vw;
+}
+
+.ship-row-3 {
+  width: 6.35vw;
+}
+
+.ship-row-4 {
+  width: 8.5vw;
+}
+
+.ship-column-1 {
+  height: 2vw;
+}
+
+.ship-column-2 {
+  height: 4.12vw;
+}
+
+.ship-column-3 {
+  height: 6.2vw;
+}
+
+.ship-column-4 {
+  height:  8.4vw;
+}
+
+.content-actions {
+  position: fixed;
+  left: 2vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-action {
+  transition: 0.3s;
+  padding: 0.5vw;
+}
+
+.shot {
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shot-missed {
+  color: black;
+}
+
+.shot-wounded {
+  z-index: 1;
+}
+
+.shot-wounded:after, .shot-wounded:before {
+  content: ' ';
+  position: absolute;
+  left: 1.02vw;
+  height: 2vw;
+  width: 0.15vw;
+  background-color: black;
+}
+
+.shot-wounded:after {
+  z-index: -1;
+  transform: rotate(45deg);
+}
+
+.shot-wounded:before {
+  z-index: -1;
+  transform: rotate(-45deg);
+}
+
+.shot-killed {
+  background: rgba(0,0,0,.45);
+  margin: -0.12vw;
+  border: 0.215vw solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+@font-face {
+  font-family: chinaCyr;
+  src: url(../src/chinacyr.ttf);
+}

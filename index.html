@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Морской бой</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <span class="header-top">Морской бой</span>
+            <br>
+            <span class="header-bottom">SedikitMods</span>
+        </div>
+
+        <div class="content">
+            <div data-side="player"></div>
+            <div class="content-menu">
+
+                <div class="content-actions" data-scene="preparation">
+                    <button class="content-action" data-computer="simple" disabled>
+                        Играть против слабого
+                    </button>
+                    <button class="content-action" data-computer="middle" disabled>
+                        Играть против среднего
+                    </button>
+                    <button class="content-action" data-computer="hard" disabled>
+                        Играть против сильного
+                    </button>
+                    <button class="content-action" data-action="manually">
+                        Расставить корабли вручную
+                    </button>
+                    <button class="content-action" data-action="randomize">
+                        Расставить корабли случайно
+                    </button>
+                </div>
+
+                <div class="content-actions hidden" data-scene="computer">
+                    <div class="battlefield-status">Ваш ход</div>
+                    <button class="content-action" data-action="gaveup">Сдаться</button>
+                    <button class="content-action" data-action="again">Ещё раз</button>
+                </div>
+
+            </div>
+            <div data-side="opponent"></div>
+        </div>
+    </div>
+
+    <script src="js/additionalScript.js"></script>
+    <script src="js/mouseScript.js"></script>
+
+    <script src="js/applicationScript.js"></script>
+    <script src="js/sceneScript.js"></script>
+    <script src="src/scenes/preparationScene.js"></script>
+    <script src="src/scenes/computerScene.js"></script>
+
+    <script src="js/battlefieldScript.js"></script>
+    <script src="js/fieldViewScript.js"></script>
+
+    <script src="js/shipScript.js"></script>
+    <script src="js/shipViewScript.js"></script>
+
+    <script src="js/shotScript.js"></script>
+    <script src="js/shotViewScript.js"></script>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
