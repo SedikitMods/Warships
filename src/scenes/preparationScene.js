@@ -183,13 +183,13 @@ class PreparationScene extends Scene {
         let untouchables = [];
 
         if (level === "simple") {
-            untouchables = getRandomSeveral(withoutShipItems, 15);
+            untouchables = getRandomSeveral(withoutShipItems, 20);
         }
         else if (level === "middle") {
-            untouchables = getRandomSeveral(withoutShipItems, 30);
+            untouchables = getRandomSeveral(withoutShipItems, 40);
         }
         else if (level === "hard") {
-            untouchables = getRandomSeveral(withoutShipItems, 40);
+            untouchables = getRandomSeveral(withoutShipItems, 60);
         }
 
         this.app.start("computer", untouchables);
